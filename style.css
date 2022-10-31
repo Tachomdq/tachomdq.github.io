@@ -8,7 +8,7 @@
 
 .grid-container {
   display: grid;
-  grid: 2vw 12vw / 5% 30% 65%;
+  grid: 1vw 12vw/ 2% 33% 65%;
 }
 
 .header-gap{
@@ -56,30 +56,36 @@ h1{
 .column{
   background-color: #f5ab73;
   grid-row-end: span 2;
-  padding-left: 5%;
+  padding: 0 5% 5% 5%;
 }
 
 .photo{
-  width: 90%;
-  margin: 5% 0 0 2%;
+  width: 95%;
+  margin: 5% 0 0 2.5%;
 }
 
 .column > h2{
   font-size: 2vw;
-  padding-bottom: 0.2rem;
-  margin-top: 1.5rem;
+  margin-top: 2vw;
 }
 
 p{
-  font-size: 1.8vw;
+  font-size: 1.5vw;
+  margin-top: 0.5vw;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+ul{
+  padding-left: 2vw;
+  margin-top: 0.5rem;
+  font-size: 1.5vw;
 }
 
 .right-side-gap{
   height: 1rem;
-}
-
-.section{
-  padding-bottom: 0.5rem;
 }
 
 .tab{
@@ -93,11 +99,104 @@ p{
 }
 
 dl{
-  margin: 0 0 0 5vw;
-  font-size: 0.8rem;
+  margin: 2rem 1vw 2rem 5vw;
+  font-size: 0.95rem;
 }
 
 dt{
   padding-top: 0.5rem;
   font-weight: bold;
+}
+
+.contact{
+  height: 28vw;
+}
+
+.icons{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 89%;
+}
+
+svg{
+  width: 10vw;
+  height: 10vw;
+}
+
+@media screen and (max-width: 1300px){
+  p, ul{
+    font-size: 1.7vw;
+  }
+
+  .icons{
+    height: 80%;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .column > h2{
+    font-size: 2.2vw;
+    margin-top: 2vw;
+  }
+
+  p{
+    font-size: 1.9vw;
+  }
+
+  ul{
+    font-size: 1.9vw;
+    padding-left: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .column > h2{
+    font-size: 2.3vw;
+    margin-top: 4vw;
+  }
+
+  p{
+    font-size: 2.5vw;
+  }
+
+  ul{
+    padding-left: 3vw;
+    font-size: 2.5vw;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .grid-container {
+    display: grid;
+    grid: 2vw 12vw / 2% 35% 63%;
+  }
+
+  
+
+  .column > h2{
+    font-size: 2.6vw;
+    margin-top: 4vw;
+  }
+
+  p{
+    font-size: 3vw;
+    margin-top: 1vw;
+  }
+
+  ul{
+    font-size: 3vw;
+    padding-left: 3vw;
+  }
+
+  dl{
+    margin: 1rem 1vw 1rem 5vw;
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 499px){
+  .column{
+    height: calc(92vh);
+  }
 }

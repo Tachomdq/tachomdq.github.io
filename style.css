@@ -8,7 +8,7 @@
 
 .grid-container {
   display: grid;
-  grid: 1vw 12vw/ 2% 33% 65%;
+  grid: 1vw 12vw / 2% 33% 65%;
 }
 
 .header-gap{
@@ -40,6 +40,7 @@ h1{
   font-weight: normal;
   line-height: 60%;
   text-align: right;
+  text-shadow: 0.1vw 0.1vw 0.1rem;
 }
 
 .italic-title{
@@ -56,7 +57,7 @@ h1{
 .column{
   background-color: #f5ab73;
   grid-row-end: span 2;
-  padding: 0 5% 5% 5%;
+  padding: 0 5% 0 5%;
 }
 
 .photo{
@@ -67,10 +68,11 @@ h1{
 .column > h2{
   font-size: 2vw;
   margin-top: 2vw;
+  text-shadow: 0.1vw 0.1vw 0.1rem;
 }
 
 p{
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   margin-top: 0.5vw;
 }
 
@@ -81,7 +83,7 @@ p{
 ul{
   padding-left: 2vw;
   margin-top: 0.5rem;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
 }
 
 .right-side-gap{
@@ -96,10 +98,11 @@ ul{
 .tab > h2{
   font-size: 1rem;
   padding: 0.5vw 0 0.5vw 3vw;
+  text-shadow: 0.1vw 0.1vw 0.1rem;
 }
 
 dl{
-  margin: 2rem 1vw 2rem 5vw;
+  padding: 1rem 1rem 1.5rem 5vw;
   font-size: 0.95rem;
 }
 
@@ -109,7 +112,7 @@ dt{
 }
 
 .contact{
-  height: 28vw;
+  height: 27vw;
 }
 
 .icons{
@@ -172,11 +175,10 @@ svg{
     grid: 2vw 12vw / 2% 35% 63%;
   }
 
-  
-
   .column > h2{
     font-size: 2.6vw;
     margin-top: 4vw;
+    text-shadow: 0.1vw 0.1vw 0.05rem;
   }
 
   p{
@@ -190,13 +192,11 @@ svg{
   }
 
   dl{
-    margin: 1rem 1vw 1rem 5vw;
+    padding: 0.5rem 0.2rem 1rem 5vw;
     font-size: 0.7rem;
   }
-}
 
-@media screen and (max-width: 499px){
-  .column{
-    height: calc(92vh);
+  .contact{
+    height: 32.2vw;
   }
 }

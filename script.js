@@ -1,13 +1,15 @@
+/*---- Boton de Temas ----*/
+
 const div = document.createElement("div");
 let theme = 1;
 
 div.appendChild(document.createTextNode("Cambiar Tema"));
 div.setAttribute("id", "boton");
 
-if(screen.width < 451){
-div.setAttribute("style", "font-size:3vw ; width:55px ; height:30px ; background-color:#4B4B4D ; position:fixed ; left:20px ; bottom:15px ; color:white ; text-align: center ; border-radius:5px ; box-shadow:3px 3px 10px #4B4B4D ;");
+if (screen.width < 451) {
+    div.setAttribute("style", "font-size:3vw ; width:55px ; height:30px ; background-color:#4B4B4D ; position:fixed ; left:20px ; bottom:15px ; color:white ; text-align: center ; border-radius:5px ; box-shadow:3px 3px 10px #4B4B4D ;");
 }
-else{
+else {
     div.setAttribute("style", "width:65px ; height:45px ; background-color:#4B4B4D ; position:fixed ; right:15px ; bottom:15px ; color:white ; text-align: center ; border-radius:5px ; box-shadow:3px 3px 10px #4B4B4D ;");
 };
 
@@ -24,7 +26,7 @@ div.addEventListener("click", function () {
         };
         theme = 2;
     }
-    else{
+    else {
         document.getElementById("photo").setAttribute("src", "./media/photo1.png");
         const themeTopClass = document.getElementsByClassName("theme-top");
         for (let i = 0; i < themeTopClass.length; i++) {
@@ -40,3 +42,14 @@ div.addEventListener("click", function () {
 
 document.body.appendChild(div);
 
+/*---- JSON Informacion Personal ----*/
+
+const infoPersonal = '{"dateBorn":"21/09/1995", "nation":"Argentina", "actualCity":"Mar del Plata", "contact":"2236960717"}';
+const objInfoPersonal = JSON.parse(infoPersonal);
+
+console.log(objInfoPersonal);
+
+document.getElementById("dateBorn").innerHTML = objInfoPersonal.dateBorn;
+document.getElementById("nation").innerHTML = objInfoPersonal.nation;
+document.getElementById("actualCity").innerHTML = objInfoPersonal.actualCity;
+document.getElementById("contact").innerHTML = objInfoPersonal.contact + "<br>" + "tacho_95@hotmail.com";

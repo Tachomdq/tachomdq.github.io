@@ -44,12 +44,26 @@ document.body.appendChild(div);
 
 /*---- JSON Informacion Personal ----*/
 
-const infoPersonal = '{"dateBorn":"21/09/1995", "nation":"Argentina", "actualCity":"Mar del Plata", "contact":"2236960717"}';
+const infoPersonal = '{"dateBorn":"21/09/1995", "nation":"Argentina", "actualCity":"Mar del Plata", "contact":"2236960717", "mail":"tacho_95@hotmail.com"}';
 const objInfoPersonal = JSON.parse(infoPersonal);
-
-console.log(objInfoPersonal);
 
 document.getElementById("dateBorn").innerHTML = objInfoPersonal.dateBorn;
 document.getElementById("nation").innerHTML = objInfoPersonal.nation;
 document.getElementById("actualCity").innerHTML = objInfoPersonal.actualCity;
-document.getElementById("contact").innerHTML = objInfoPersonal.contact + "<br>" + "tacho_95@hotmail.com";
+document.getElementById("contact").innerHTML = objInfoPersonal.contact + "<br>" + objInfoPersonal.mail;
+
+/* ---- LocalStorage de JSON, recuperacion y manipulacion del mismo  ----*/
+
+const abilities = {"0":"Paquete Oﬃce", "1":"Instalación y configuración de redes", "2":"Conocimientos de hardware informatico", "3":"HTML, CSS Responsive y JavaScript", "4":"Git y GitHub", "5":"PhotoShop y CorelDRAW"};
+
+localStorage.setItem("abilitiesJSON", JSON.stringify(abilities));
+
+const abilitiesLS = localStorage.getItem("abilitiesJSON");
+
+const abilitiesParse = JSON.parse(abilitiesLS);
+
+const liClassName = document.getElementsByClassName("li");
+
+for (let i = 0; i < liClassName.length; i++){
+    liClassName[i].innerHTML = abilitiesParse[i];
+};

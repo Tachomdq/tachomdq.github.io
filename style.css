@@ -205,6 +205,10 @@ h1, h2{
     margin-top: 4vw;
   }
 
+  .column{
+    padding-bottom: 8vw;
+  }
+
   p{
     font-size: 2.5vw;
   }
@@ -243,6 +247,6 @@ h1, h2{
   }
 
   .contact{
-    height: 32.2vw;
+    height: 37vw;
   }
 }

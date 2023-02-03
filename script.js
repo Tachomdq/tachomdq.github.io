@@ -54,16 +54,29 @@ document.getElementById("contact").innerHTML = objInfoPersonal.contact + "<br>" 
 
 /* ---- LocalStorage de JSON, recuperacion y manipulacion del mismo  ----*/
 
-const abilities = {"0":"Paquete Oﬃce", "1":"Instalación y configuración de redes", "2":"Conocimientos de hardware informatico", "3":"HTML, CSS Responsive y JavaScript", "4":"Git y GitHub", "5":"PhotoShop y CorelDRAW"};
+const abilities = { "0": "Paquete Oﬃce", "1": "Instalación y configuración de redes", "2": "Conocimientos de hardware informatico", "3": "HTML, CSS Responsive y JavaScript", "4": "Git y GitHub", "5": "PhotoShop y CorelDRAW" };
 
-localStorage.setItem("abilitiesJSON", JSON.stringify(abilities));
+if (localStorage.hasOwnProperty("abilitiesJSON")) {
+    const abilitiesLS = localStorage.getItem("abilitiesJSON");
 
-const abilitiesLS = localStorage.getItem("abilitiesJSON");
+    const abilitiesParse = JSON.parse(abilitiesLS);
 
-const abilitiesParse = JSON.parse(abilitiesLS);
+    const liClassName = document.getElementsByClassName("li");
 
-const liClassName = document.getElementsByClassName("li");
+    for (let i = 0; i < liClassName.length; i++) {
+        liClassName[i].innerHTML = abilitiesParse[i];
+    };
+}
+else {
+    localStorage.setItem("abilitiesJSON", JSON.stringify(abilities));
 
-for (let i = 0; i < liClassName.length; i++){
-    liClassName[i].innerHTML = abilitiesParse[i];
+    const abilitiesLS = localStorage.getItem("abilitiesJSON");
+
+    const abilitiesParse = JSON.parse(abilitiesLS);
+
+    const liClassName = document.getElementsByClassName("li");
+
+    for (let i = 0; i < liClassName.length; i++) {
+        liClassName[i].innerHTML = abilitiesParse[i];
+    };
 };

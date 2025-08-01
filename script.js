@@ -40,6 +40,13 @@ div.addEventListener("click", function () {
     }
 });
 
+div.addEventListener("click", function () {
+    document.getAnimations().forEach((anim) => {
+    anim.cancel();
+    anim.play();
+  });
+});
+
 document.body.appendChild(div);
 
 /*---- JSON Informacion Personal ----*/
@@ -54,8 +61,6 @@ document.getElementById("contact").innerHTML = objInfoPersonal.contact + "<br>" 
 
 /* ---- LocalStorage de JSON, recuperacion y manipulacion del mismo  ----*/
 
-const abilities = { "0": "Paquete Oﬃce", "1": "Instalación y configuración de redes", "2": "Conocimientos de hardware informatico", "3": "HTML, CSS Responsive y JavaScript", "4": "Git y GitHub", "5": "PhotoShop y CorelDRAW" };
-
 if (localStorage.hasOwnProperty("abilitiesJSON")) {
     const abilitiesLS = localStorage.getItem("abilitiesJSON");
 
@@ -68,6 +73,8 @@ if (localStorage.hasOwnProperty("abilitiesJSON")) {
     };
 }
 else {
+    const abilities = { "0": "Paquete Oﬃce", "1": "Instalación y configuración de redes", "2": "Conocimientos de hardware informatico", "3": "HTML, CSS Responsive y JavaScript", "4": "Git y GitHub", "5": "PhotoShop y CorelDRAW" };
+    
     localStorage.setItem("abilitiesJSON", JSON.stringify(abilities));
 
     const abilitiesLS = localStorage.getItem("abilitiesJSON");
